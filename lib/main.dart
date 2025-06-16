@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:whether_app/homescreen.dart';
+
+import 'homescreen.dart';
 
 void main() {
-  runApp(WhetherApp());
+  runApp(const WeatherApp());
 }
 
-final ThemeData appTheme = ThemeData(
-  colorScheme: ColorScheme.fromSeed(
-    seedColor: Colors.blueAccent,
-    //brightness: Brightness.light, // or Brightness.dark for dark mode
-  ),
-);
+class WeatherApp extends StatelessWidget {
+  const WeatherApp({super.key});
 
-class WhetherApp extends StatelessWidget {
-  const WhetherApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Weather App',
       debugShowCheckedModeBanner: false,
-      title: 'Whether App',
-      home: HomeScreen(),
-      theme: appTheme,
+      theme: ThemeData(
+        fontFamily: 'Arial',
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+      ),
+      home: const WeatherHomePage(),
     );
   }
 }
